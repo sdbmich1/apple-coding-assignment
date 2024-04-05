@@ -79,8 +79,17 @@ GEM
     concurrent-ruby (1.2.3)
     crass (1.0.6)
     date (3.3.4)
+    diff-lcs (1.5.1)
     erubi (1.12.0)
+    faker (3.3.1)
+      i18n (>= 1.8.11, < 2)
+    faraday (1.2.0)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords
+    faraday_middleware (1.2.0)
+      faraday (~> 1.0)
     ffi (1.16.3)
+    geocoder (1.8.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.4)
@@ -103,9 +112,9 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.5)
     minitest (5.22.3)
     msgpack (1.7.2)
+    multipart-post (2.4.0)
     net-imap (0.4.10)
       date
       net-protocol
@@ -119,7 +128,7 @@ GEM
     nokogiri (1.15.6-arm64-darwin)
       racc (~> 1.4)
     public_suffix (5.0.5)
-    puma (5.6.8)
+    puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (2.2.9)
@@ -163,6 +172,24 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.9.0)
     rexml (3.2.6)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-rails (6.1.2)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.13)
+      rspec-expectations (~> 3.13)
+      rspec-mocks (~> 3.13)
+      rspec-support (~> 3.13)
+    rspec-support (3.13.1)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -187,8 +214,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.7.3)
-      mini_portile2 (~> 2.8.0)
+    sqlite3 (1.7.3-arm64-darwin)
     thor (1.3.1)
     tilt (2.3.0)
     timeout (0.4.1)
@@ -226,11 +252,16 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  faker
+  faraday
+  faraday_middleware
+  geocoder
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  puma (~> 5.0)
+  puma
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7, >= 6.1.7.7)
+  rspec-rails
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   spring
@@ -242,7 +273,7 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 2.7.4p191
+   ruby 3.2.3p157
 
 BUNDLED WITH
    2.4.22
