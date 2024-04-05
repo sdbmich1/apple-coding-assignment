@@ -1,8 +1,18 @@
+##################################################################
+#
+# Name: geocode_service.rb
+#
+# Purpose:  Calls Geocoder to convert address to lat/long with zipcode as needed 
+#
+# Params:  address: string
+#
+# Returns: Struct/Hash
+#
+###################################################################
 class GeocodeService < ApplicationService
 
   def self.call(address)
-    # call geocoder
-    response = Geocoder.search(address)
+    response = Geocoder.search(address) # call geocoder
 
     # check response
     response or raise IOError.new "Geocoder error"
